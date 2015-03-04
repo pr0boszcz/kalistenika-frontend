@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # A Lineman JS Template using Angular
 
 [![Build Status](https://travis-ci.org/linemanjs/lineman-angular-template.png?branch=master)](https://travis-ci.org/linemanjs/lineman-angular-template)
@@ -71,3 +72,7 @@ module.exports = function(lineman) {
 ```
 
 Hopefully this helps you get up and running with AngularJS!
+=======
+# kalistenika-frontend
+kalistenika-frontend
+>>>>>>> 2712c0b6c07ce1c02665086c4ea814eca7962fa5
