@@ -1,0 +1,72 @@
+.my-form.ng-invalid {
+   background: red;
+ }
+
+$topbar-bg: rgba(#000, 0.5);
+
+
+.margin-top {
+	margin-top: 5em;
+}
+
+.rounded {
+  border-radius: 1em;
+}
+
+.cover { 
+   	height: 52em;
+    width: 100%;
+    // position: absolute;
+    z-index: -1;
+    // background-position: 50% 50%;
+    background: transparent url("../img/pani-hd.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.pani {
+ 	height: 52em;
+	// width: 100%;
+	// position: absolute;
+	background: transparent url("../img/maxresdefault.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
+.paniczerwona {
+  // height: 52em;
+  // width: 100%;
+  // position: absolute;
+  position: absolute;
+
+  // background: transparent url("../img/czerwona.jpg") no-repeat center;
+  // background-size: contain;
+}
+
+.exercise-selector-container {
+  // background-color: rgb(162, 155, 149); 
+  background-color: #BC6643;
+}
+
+.transparent {
+  background: transparent;
+}
+
+.lines {
+  position: absolute;
+}
+
+.divider {
+  color: white;
+  font-size: 10em;
+  text-align: center;
+  margin-bottom: -0.86em !important;
+  margin-top: -0.2em !important;
+}
+
+.next {
+  color: lightblue;
+  font-size: 10em;
+  text-align: center;
+  margin-top: -0.5em !important;
+  
+}

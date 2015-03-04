@@ -1,18 +1,20 @@
 {
-  "name": "lineman-angular-template",
-  "title": "An HTML/JS/CSS app using Angular.JS",
+  "name": "Kalistenika",
+  "title": "Kalistenika dla skurwieli",
   "version": "0.0.1",
   "private": true,
   "author": {
-    "name": "John Doe",
-    "company": "ACME, Inc."
+    "name": "Krzysiu",
+    "company": "DVD-T, Inc."
   },
   "devDependencies": {
     "coffee-script": "^1.6.3",
     "jasmine-given": "^2.6.2",
-    "lineman": "^0.34.0",
+    "jquery": "^2.1.3",
+    "lineman": "^0.34.4",
     "lineman-angular": "^0.3.0",
-    "lineman-less": "0.0.1",
+    "lineman-foundation": "^0.1.12",
+    "lineman-rails": "^0.1.0",
     "protractor": "^1.4.0"
   },
   "scripts": {

@@ -24,7 +24,7 @@ module.exports = function(lineman) {
     // }
 
     server: {
-      pushState: true
+      pushState: true,
       // API Proxying
       //
       // During development, you'll likely want to make XHR (AJAX) requests to an API on the same
@@ -32,12 +32,13 @@ module.exports = function(lineman) {
       // requests for paths that don't match a static asset in ./generated will be forwarded to
       // whatever service might be running on the specified port.
       //
-      // apiProxy: {
-      //   enabled: true,
-      //   host: 'localhost',
-      //   port: 3000
-      // }
-    }
+      apiProxy: {
+        enabled: true,
+        host: 'localhost',
+        port: 3000,
+        prefix: '/'
+      }
+    },
 
     // Sass
     //
@@ -45,7 +46,7 @@ module.exports = function(lineman) {
     // have Ruby installed as well as the `sass` gem. To enable it, comment out the
     // following line:
     //
-    // enableSass: true
+    enableSass: true,
 
     // Asset Fingerprints
     //
@@ -53,7 +54,9 @@ module.exports = function(lineman) {
     // and logging a manifest of logical-to-hashed filenames in dist/assets.json
     // via grunt-asset-fingerprint
     //
-    // enableAssetFingerprint: true
+    enableAssetFingerprint: true,
 
+    // Lineman's Livereload
+    livereload: true,
   };
 };

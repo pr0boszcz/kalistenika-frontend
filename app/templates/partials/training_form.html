@@ -1,0 +1,39 @@
+
+<div class="row">
+  <div class="large-4 columns margin-top">
+    <img class="rounded margin-top" src="../img/czerwona.jpg">
+  </div>
+
+  <div class="large-7 columns margin-top" style="margin-top: 15em">
+    <form name="trainingForm">
+    <div class="row">
+      <div class="large-9 columns" >
+        <label class="label">Training Name:</label>
+        <input type="text" name="name" placeholder="Write name for your training" ng-model="training.name" required/>
+        <span class="error" ng-show="trainingForm.name.$error.required">Required!</span>
+      </div>
+
+      <div class="large-3 columns ">
+        <label class="label">Pause time:</label>
+        <input type="number" name="pause" min="0" placeholder="sec" ng-model="training.pause" required/>
+        <span class="error" ng-show="trainingForm.pause.$error.required">Required!</span>
+        <span class="error" ng-show="trainingForm.pause.$error.number">Number!</span>
+      </div>  
+    </div>
+    
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label class="label">Training Description:</label>
+        <textarea type="text" name="desc" placeholder="Describe your new training" ng-model="training.description" style="min-height: 10em; max-width: 100%" required></textarea>
+        <span class="error" ng-show="trainingForm.desc.$error.required">Required!</span>
+      </div>
+    </div>
+    </form>
+
+
+    <div class="large-3 columns large-centered">
+      <a href="#exercises-selector" offset="30" du-smooth-scroll du-scrollspy class="button expand radius"><i class="fa fa-angle-double-down" ></i></a>
+    </div>
+  </div>
+</div>

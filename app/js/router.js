@@ -1,6 +1,6 @@
 angular.module("app").config(function($routeProvider, $locationProvider) {
 
-  $locationProvider.html5Mode({enabled:true});
+  //$locationProvider.html5Mode({enabled:true});
 
   $routeProvider.when('/login', {
     templateUrl: 'login.html',
@@ -12,21 +12,19 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     controller: 'HomeController'
   });
 
-  $routeProvider.when('/$resource/list-of-books', {
-    templateUrl: 'books_resource.html',
-    controller: 'BooksResourceController'
+  $routeProvider.when('/frontpage', {
+    templateUrl: 'frontpage.html',
+    controller: 'FormularzController',
+    
+    //// jeśli za pomocą service $http (wiecej w controllerze)
+    // 
+    // resolve: {
+    //   exercises: function(ExerciseService) {
+    //     return ExerciseService.getExercises();
+    //   }
+    // }
   });
 
-  $routeProvider.when('/$http/list-of-books', {
-    templateUrl: 'books_http.html',
-    controller: 'BooksHttpController',
-    resolve: {
-      books: function(BookService) {
-        return BookService.getBooks();
-      }
-    }
-  });
-
-  $routeProvider.otherwise({ redirectTo: '/login' });
+  $routeProvider.otherwise({ redirectTo: '/frontpage' });
 
 });

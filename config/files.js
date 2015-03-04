@@ -6,12 +6,14 @@
  *   - https://github.com/linemanjs/lineman/blob/master/config/files.coffee
  */
 module.exports = function(lineman) {
-  //Override file patterns here
+  //Override file pa tterns here
   return {
     js: {
       vendor: [
+        // "vendor/bower/jquery/dist/jquery.js",
+        // "vendor/bower/jquery-ui/jquery-ui.js",
         "vendor/js/angular.js",
-        "vendor/js/**/*.js"
+        "vendor/js/**/*.js",
       ],
       app: [
         "app/js/app.js",
