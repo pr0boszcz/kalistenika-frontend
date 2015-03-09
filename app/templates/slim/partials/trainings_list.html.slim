@@ -1,0 +1,6 @@
+.row
+  .large-20.columns
+    ul.no-bullet
+      li.button.collapse.small.radius[data-ng-repeat="training in trainings" style="margin: 0.2em" ng-click="show(training)" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"]
+        | {{training.name}} {{training.level}} [{{training.id}}]
+        a.close[ng-show="hoverEdit" ng-click="" style="margin-top: -0.9em"]

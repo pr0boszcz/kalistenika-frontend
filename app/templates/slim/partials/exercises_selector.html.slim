@@ -1,0 +1,36 @@
+.row
+  .large-5.columns.panel.small-12[style="height:40em; margin-top: 1.25em"]
+    ul.no-bullet[ng-sortable="list2config" style="height:100%"]
+      li.row.collapse[data-ng-repeat="item in list2" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"]
+        form[name="myForm"]
+          .large-9.columns.prefix.alert-box
+            |  {{item.name}} 
+            a.close.alert[ng-show="hoverEdit" ng-click="removeSerie($index)" style="margin-top: -0.9em"]
+              i.fa.fa-times
+          .large-3.columns
+            input[type="number" name="input" min="1" placeholder="powtórzenia" ng-init="item.repeats = item.repeats || 1" ng-model="item.repeats" required]
+            span.error[ng-show="myForm.input.$error.required"]
+              | Required!
+            span.error[ng-show="myForm.input.$error.number"]
+              | Number
+  .large-2.columns.margin-top
+    - 19.times do
+      hr
+    br
+    button.button.expand.radius.margin-top[ng-if="training.id != null" ng-click="delete(training)"]
+      | Delete
+    br
+    button.button.expand.radius.margin-top[ng-click="reset_form()"]
+      | Reset
+    br
+    button.button.expand.radius.margin-top[ng-click="save()"]
+      | Save
+  .large-5.columns.panel.small-12[style="height:40em; margin-top:1.25em"]
+    input[type="search" ng-model="q" placeholder="filter exercises..."]
+    ul[ng-sortable="list1config" style="text-align: center;overflow-y: scroll; max-height:90%"]
+      li.button.small.radius[data-ng-repeat="item in list1 | filter:q as results" style="margin: 0.2em" ng-click="clone(item)"]
+        div
+          | {{item.name}}
+    div[ng-if="results.length == 0"]
+      strong
+        | No results found...

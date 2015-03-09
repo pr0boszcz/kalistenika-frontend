@@ -1,0 +1,39 @@
+section#top
+  div[du-parallax y="background"]
+    .cover
+      nav.top-bar[data-topbar role="navigation"]
+        ul.title-area
+          li.name
+            h1
+              a[href="#top" du-smooth-scroll du-scrollspy]
+                | Kalistenika dla skurwieli
+          li.toggle-topbar.menu-icon
+            a[href="#"]
+              span
+                | Menu
+        section.top-bar-section
+          ul.right
+            li.active
+              a[href="#training-form" offset="-120" du-smooth-scroll du-scrollspy]
+                | Create training
+            li.has-dropdown
+              a[href="#"]
+                | Right Button Dropdown
+              ul.dropdown
+                li
+                  a[href="#training-form" offset="30" du-smooth-scroll du-scrollspy]
+                    | Training form
+                li.active
+                  a[href="#exercise-selector" offset="30" du-smooth-scroll du-scrollspy]
+                    | Exercise selector
+section#training-form
+  ng-include[src="'partials/training_form.html'" scope="" onload=""]
+.row.divider
+  i.fa.fa-caret-down
+section#exercises-selector
+  .exercise-selector-container
+    ng-include[src="'partials/exercises_selector.html'" scope="" onload=""]
+section#trainings-list
+  .trainings-list-container
+    ng-include[src="'partials/trainings_list.html'" scope="" onload=""]
+.pani
