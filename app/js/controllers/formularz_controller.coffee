@@ -1,5 +1,5 @@
 
-app = angular.module("app")
+app = angular.module "app"
 delay = (ms, func) -> setTimeout func, ms
 app.controller 'FormularzController', ($scope, $http, parallaxHelper, $document, Exercises, Trainings ) ->
   $scope.background = parallaxHelper.createAnimator -0.3, 500, 0, 0
@@ -40,7 +40,6 @@ app.controller 'FormularzController', ($scope, $http, parallaxHelper, $document,
       $scope.training.level = tmptr.level
       $scope.training.pause = tmptr.pause
       $scope.training.id = tmptr.id
-
 
   # flaga dla guzika do usuwania z listy exercisa (jakieś badziewie o.0)
   this.hoverEdit = true

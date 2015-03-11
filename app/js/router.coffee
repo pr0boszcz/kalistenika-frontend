@@ -16,6 +16,8 @@ app.config ($routeProvider, $locationProvider) ->
     templateUrl: 'frontpage.html',
     controller: 'FormularzController',
 
+  $routeProvider.when '/training/:id',
+    templateUrl: 'training.html',
+    controller: 'TrainingController'
 
   $routeProvider.otherwise redirectTo: '/frontpage'
-

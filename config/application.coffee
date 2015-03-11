@@ -20,30 +20,26 @@ module.exports = (lineman) ->
     # ngtemplates:
     #   options:
     #     module: "myModuleName"
-    loadNpmTasks: lineman.config.application.loadNpmTasks.concat 'grunt-slim',
-    prependTasks: dev: ['slim']
-
-    slim:                               # Task
-      dist:                             # Target
-        options:
-          pretty: true
-        files:
-          [
-            {
-              expand: true,
-              cwd:    'app/templates/slim',
-              src:    ['*.slim'],
-              dest:   'app/templates',
-              ext:    '.html'
-            },
-            {
-              expand: true,
-              cwd:    'app/templates/slim/partials',
-              src:    ['*.slim'],
-              dest:   'app/templates/partials',
-              ext:    '.html'
-            }
-          ]
+    loadNpmTasks: lineman.config.application.loadNpmTasks.concat('grunt-slim')
+    prependTasks: dev: [ 'slim' ]
+    slim: dist:
+      options: pretty: true
+      files: [
+        {
+          expand: true
+          cwd: 'app/templates/slim'
+          src: [ '*.slim' ]
+          dest: 'app/templates'
+          ext: '.html'
+        }
+        {
+          expand: true
+          cwd: 'app/templates/slim/partials'
+          src: [ '*.slim' ]
+          dest: 'app/templates/partials'
+          ext: '.html'
+        }
+      ]
 
     watch:
       templates:

@@ -17,7 +17,7 @@
     - 19.times do
       hr
     br
-    button.button.expand.radius.margin-top[ng-if="training.id != null" ng-click="delete(training)"]
+    button.button.expand.radius.margin-top[ng-hide="training.id == null" ng-click="delete(training)"]
       | Delete
     br
     button.button.expand.radius.margin-top[ng-click="reset_form()"]
