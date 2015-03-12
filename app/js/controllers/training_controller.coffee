@@ -2,16 +2,19 @@ app = angular.module "app"
 delay = (ms, func) -> setTimeout func, ms
 app.controller 'TrainingController', ($scope, $http, $routeParams, parallaxHelper, $document, Exercises, Trainings ) ->
   $scope.time = 0
-  $isTimerRun = false
+  $scope.isTimerRun = false
+  $scope.isDone = 0
   tmptr = Trainings.get id: $routeParams.id, ->
     $scope.pause = tmptr.pause
     $scope.time = tmptr.pause
+    $scope.series = tmptr.series
 
   $scope.startTimer= ->
-    if $isTimerRun
+    if $scope.isTimerRun
       return
     else
-      $isTimerRun = true
+      $scope.isTimerRun = true
+      $scope.isDone++
       $scope.startCounting()
 
   $scope.startCounting= ->
@@ -29,4 +32,5 @@ app.controller 'TrainingController', ($scope, $http, $routeParams, parallaxHelpe
 
   $scope.resetTimer= ->
     $scope.time = $scope.pause
-    $isTimerRun = false
+    $scope.isTimerRun = false
+    $scope.$apply()

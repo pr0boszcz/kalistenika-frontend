@@ -1,6 +1,21 @@
 .row.center[ng-controller="TrainingController"]
-  .progress-container.center
-  .large-3.columns
-    .progress-txt[ng-click="startTimer()"]
-      training-timer
-    .roundprogress[round-progress max="pause" current="time" radius=180 stroke=30]
+  a[href="/#/frontpage"]
+    button.button.expand.radius.margin-top
+      | Go Back
+.row
+  .large-7.columns
+    ul.no-bullet
+      li.row.collapse.margin-top[ng-repeat="serie in series"]
+        .large-8.columns.prefix.alert-box
+          | {{serie.exercise.name}}
+        .large-3.columns.prefix.end
+          | {{serie.repeats}}
+        .large-1.columns.prefix.button[ng-click="startTimer($index)" ng-hide="(isDone != $index) || isTimerRun"]
+          | Done!
+  .large-5.columns.text-center
+    #progress-container[ng-if="isDone<series.length"]
+      .progress-txt
+        training-timer
+      #roundprogress[round-progress max="pause" current="time" radius=180 stroke=30 iterations=10]
+    div[ng-if="isDone>series.length"]
+      | Gratulejszyn! Zajebiście się spisałeś!

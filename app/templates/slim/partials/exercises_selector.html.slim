@@ -14,8 +14,12 @@
             span.error[ng-show="myForm.input.$error.number"]
               | Number
   .large-2.columns.margin-top
-    - 19.times do
+    - 16.times do
       hr
+    br
+    a[href="/#/training/{{training.id}}"]
+      button.button.expand.radius.margin-top[ng-hide="training.id == null"]
+        | GO!
     br
     button.button.expand.radius.margin-top[ng-hide="training.id == null" ng-click="delete(training)"]
       | Delete
